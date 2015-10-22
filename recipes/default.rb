@@ -1,12 +1,14 @@
 #
-# Cookbook Name:: ruby_enterprise
+# Cookbook Name:: ruby-enterprise-install
 # Recipe:: default
 #
+# Author:: Bryan Crossland ([bacrossland](https://github.com/bacrossland))
 # Author:: Mike Fiedler (<miketheman@gmail.com>)
 # Author:: Joshua Timberman (<joshua@opscode.com>)
 # Author:: Sean Cribbs (<seancribbs@gmail.com>)
 # Author:: Michael Hale (<mikehale@gmail.com>)
-# 
+#
+# Copyright:: 2015, Bryan Crossland
 # Copyright:: 2011-2012, Mike Fiedler
 # Copyright:: 2009-2010, Opscode, Inc.
 # Copyright:: 2009, Sean Cribbs

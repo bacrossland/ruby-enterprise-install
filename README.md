@@ -46,7 +46,7 @@ Until then, this will continue to serve as a working cookbook for REE.
 License and Authors
 ===================
 
-Author:: Bryan Crossland (<bacrossland@gmail.com>)
+Bryan Crossland ([bacrossland](https://github.com/bacrossland))
 Author:: Mike Fiedler (<miketheman@gmail.com>)
 Author:: Joshua Timberman (<joshua@opscode.com>)
 Author:: Sean Cribbs (<seancribbs@gmail.com>)
