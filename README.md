@@ -1,9 +1,9 @@
-# ruby_enterprise [![Build Status](https://secure.travis-ci.org/miketheman/ruby_enterprise.png?branch=master)](http://travis-ci.org/miketheman/ruby_enterprise)
+# ruby_enterprise [![Build Status](https://secure.travis-ci.org/bacrossland/ruby-enterprise-install.png?branch=master)](http://travis-ci.org/bacrossland/ruby-enterprise-install)
 
 Description
 ===========
 
-Installs Ruby Enterprise Edition (REE) from Phusion.
+Installs Ruby Enterprise Edition (REE) by Phusion from the github repo http://github.com/bacrossland/ruby_enterprise
 
 Requirements
 ============
@@ -46,11 +46,13 @@ Until then, this will continue to serve as a working cookbook for REE.
 License and Authors
 ===================
 
+Author:: Bryan Crossland (<bacrossland@gmail.com>)
 Author:: Mike Fiedler (<miketheman@gmail.com>)
 Author:: Joshua Timberman (<joshua@opscode.com>)
 Author:: Sean Cribbs (<seancribbs@gmail.com>)
 Author:: Michael Hale (<mikehale@gmail.com>)
 
+Copyright:: 2015, Bryan Crossland
 Copyright:: 2011-2012, Mike Fiedler
 Copyright:: 2009-2010, Opscode, Inc.
 Copyright:: 2009, Sean Cribbs
