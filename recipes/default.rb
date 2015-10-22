@@ -32,7 +32,8 @@ packages = value_for_platform(
     'default' => ['readline-devel', 'openssl-devel', 'patch']
   },
   ["ubuntu"] => {
-    '12.04' => ['libreadline-dev', 'libssl-dev']
+    '12.04' => ['libreadline-dev', 'libssl-dev'],
+    '14.04' => ['libreadline-dev', 'libssl-dev']
   },
   "default" => ['libreadline5-dev', 'libssl-dev']
 )
