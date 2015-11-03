@@ -1,5 +1,5 @@
 name             'ruby-enterprise-install'
-maintainer       'Mike Fiedler'
+maintainer       'Bryan Crossland'
 maintainer_email 'bacrossland@gmail.com'
 license          'Apache 2.0'
 description      'Installs/Configures ruby-enterprise'
@@ -8,6 +8,8 @@ version          '0.2.7'
 
 recipe 'ruby-enterprise-install', 'Installs Ruby Enterprise Edition'
 
+depends 'apt'
+depends 'yum'
 depends 'build-essential'
 
 %w{redhat centos fedora ubuntu}.each do |os|

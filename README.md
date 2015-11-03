@@ -3,13 +3,17 @@
 Description
 ===========
 
-Installs Ruby Enterprise Edition (REE) by Phusion from the github repo http://github.com/bacrossland/ruby_enterprise
+Installs Ruby Enterprise Edition (REE) by Phusion with patches from the github repo http://github.com/bacrossland/ruby_enterprise
+REE is no longer supported. You should migrate off it as soon as you can. This cookbook is here to help you do that by
+installing REE onto newer OS versions of Ubuntu, CentOS, and Fedora.
 
 Requirements
 ============
 
 ## Cookbooks:
 * `build-essential` - get a compiler and associated files
+* `apt` - package manager for Ubuntu
+* `yum` - package manager for CentOS and Fedora
 
 Attributes
 ==========
@@ -37,9 +41,9 @@ The definition supports parameters for source and version, though they are optio
 
 Note
 ====
-Ruby Enterprise Edition is being dropped sometime in the future.
-A [post from Phusion][1] explains the reason for dropping the support, and will eventually kill it off entirely.
-Until then, this will continue to serve as a working cookbook for REE.
+Ruby Enterprise Edition has been dropped.
+A [post from Phusion][1] explains the reason for dropping the support.
+This cookbook serves as a way to install REE onto new versions of infrastructure.
 
 [1]: http://blog.phusion.nl/2012/02/21/ruby-enterprise-edition-1-8-7-2012-02-released-end-of-life-imminent/
 

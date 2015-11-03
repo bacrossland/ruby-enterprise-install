@@ -31,7 +31,7 @@ include_recipe "build-essential"
 
 packages = value_for_platform(
   ["centos", "redhat", "fedora"] => {
-    'default' => ['readline-devel', 'openssl-devel', 'patch']
+    'default' => ['readline', 'readline-devel', 'openssl-devel', 'patch', 'gcc', 'gcc-c++', 'libtool']
   },
   ["ubuntu"] => {
     '12.04' => ['libreadline-dev', 'libssl-dev'],
@@ -52,10 +52,30 @@ remote_file "#{Chef::Config[:file_cache_path]}/ruby-enterprise-#{ree_ver}.tar.gz
   not_if { ::File.exists?("#{Chef::Config[:file_cache_path]}/ruby-enterprise-#{ree_ver}.tar.gz") }
 end
 
-bash "Install Ruby Enterprise Edition" do
+bash "Unpack Ruby Enterprise Edition" do
   cwd Chef::Config[:file_cache_path]
   code <<-EOH
   tar zxf ruby-enterprise-#{ree_ver}.tar.gz
+  EOH
+end
+
+# Patch for OpenSSL issue. http://admin4you.blogspot.com/2014/08/ruby-installation-issue-with-openssl.html
+cookbook_file "#{Chef::Config[:file_cache_path]}/ruby-enterprise-#{ree_ver}/source/ext/openssl/ossl_pkey_ec.c" do
+  source 'ossl_pkey_ec.c'
+end
+
+# If Ubuntu, patch for 'conflicting declaration' error. https://github.com/sstephenson/ruby-build/issues/186
+if node['platform'] == 'ubuntu'
+  tcmalloc_path = 'source/distro/google-perftools-1.7/src/tcmalloc.cc'
+  cookbook_file "#{Chef::Config[:file_cache_path]}/ruby-enterprise-#{ree_ver}/#{tcmalloc_path}" do
+    source 'tcmalloc.cc'
+  end
+end
+
+
+bash "Install Ruby Enterprise Edition" do
+  cwd Chef::Config[:file_cache_path]
+  code <<-EOH
   ruby-enterprise-#{ree_ver}/installer \
     --auto=#{ree_path}
   EOH
