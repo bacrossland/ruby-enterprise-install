@@ -12,27 +12,40 @@ env:
   - CHEF_VERSION=12.5.1
 gemfile:
   - test/support/Gemfile
+  - test/support/Gemfile.ruby-1.9.x
 script:
   - bundle exec rake knife
   - bundle exec rake tailor
   - bundle exec rake foodcritic
 matrix:
   exclude:
+    - rvm: 1.9.3
+        env: CHEF_VERSION=11.18.12
+    - rvm: 1.9.3
+        env: CHEF_VERSION=12.5.1
     - rvm: 2.0.0
-      env: CHEF_VERSION=0.9.18
+        env: CHEF_VERSION=0.9.18
     - rvm: 2.0.0
-      env: CHEF_VERSION=0.10.10
+        env: CHEF_VERSION=0.10.10
     - rvm: 2.0.0
-      env: CHEF_VERSION=10.34.6
+        env: CHEF_VERSION=10.34.6
     - rvm: 2.1.7
-      env: CHEF_VERSION=0.9.18
+        env: CHEF_VERSION=0.9.18
     - rvm: 2.1.7
-      env: CHEF_VERSION=0.10.10
+        env: CHEF_VERSION=0.10.10
     - rvm: 2.1.7
-      env: CHEF_VERSION=10.34.6
+        env: CHEF_VERSION=10.34.6
     - rvm: 2.2.3
-      env: CHEF_VERSION=0.9.18
+        env: CHEF_VERSION=0.9.18
     - rvm: 2.2.3
-      env: CHEF_VERSION=0.10.10
+        env: CHEF_VERSION=0.10.10
     - rvm: 2.2.3
-      env: CHEF_VERSION=10.34.6
+        env: CHEF_VERSION=10.34.6
+    - rvm: 1.9.3
+        gemfile: test/support/Gemfile
+    - rvm: 2.0.0
+        gemfile: test/support/Gemfile.ruby-1.9.x
+    - rvm: 2.1.7
+        gemfile: test/support/Gemfile.ruby-1.9.x
+    - rvm: 2.2.3
+        gemfile: test/support/Gemfile.ruby-1.9.x
