@@ -27,16 +27,16 @@
 # limitations under the License.
 #
 
-include_recipe "build-essential"
+include_recipe 'build-essential'
 
 packages = value_for_platform(
-  ["centos", "redhat", "fedora"] => {
+  ['centos', 'redhat', 'fedora'] => {
     'default' => ['readline', 'readline-devel', 'openssl-devel', 'patch', 'gcc', 'gcc-c++', 'libtool']
   },
-  ["ubuntu"] => {
+  ['ubuntu'] => {
     'default' => ['libreadline-dev', 'libssl-dev']
   },
-  "default" => ['libreadline5-dev', 'libssl-dev']
+  'default' => ['libreadline5-dev', 'libssl-dev']
 )
 
 packages.each do |pkg|
@@ -51,7 +51,7 @@ remote_file "#{Chef::Config[:file_cache_path]}/ruby-enterprise-#{ree_ver}.tar.gz
   not_if { ::File.exists?("#{Chef::Config[:file_cache_path]}/ruby-enterprise-#{ree_ver}.tar.gz") }
 end
 
-bash "Unpack Ruby Enterprise Edition" do
+bash 'Unpack Ruby Enterprise Edition' do
   cwd Chef::Config[:file_cache_path]
   code <<-EOH
   tar zxf ruby-enterprise-#{ree_ver}.tar.gz
@@ -72,7 +72,7 @@ if node['platform'] == 'ubuntu'
 end
 
 
-bash "Install Ruby Enterprise Edition" do
+bash 'Install Ruby Enterprise Edition' do
   cwd Chef::Config[:file_cache_path]
   code <<-EOH
   ruby-enterprise-#{ree_ver}/installer \

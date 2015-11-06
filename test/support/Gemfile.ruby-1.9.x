@@ -1,9 +1,8 @@
 source "https://rubygems.org"
 
 gem 'rake'
-gem 'amq-protocol', '= 1.9.2'
-gem 'bunny', '~> 1.7.0'
+gem 'bunny', '~> 0.8.0'
 gem 'ohai', '~> 6.14.0'
 gem 'foodcritic', '~> 4.0.0'
 gem 'tailor'
-gem 'chef', '~> 0.9.18'
+gem 'chef', '~> 10.12.0'
