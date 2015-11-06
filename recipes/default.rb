@@ -80,6 +80,6 @@ bash "Install Ruby Enterprise Edition" do
   EOH
   not_if do
     ::File.exists?("#{ree_path}/bin/ree-version") &&
-      system("#{ree_path}/bin/ree-version | grep -q '#{ree_ver}$'")
+        Mixlib::ShellOut.new("#{ree_path}/bin/ree-version | grep -q '#{ree_ver}$'")
   end
 end
