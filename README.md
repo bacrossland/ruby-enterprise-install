@@ -1,11 +1,12 @@
-# ruby_enterprise [![Build Status](https://secure.travis-ci.org/bacrossland/ruby-enterprise-install.png?branch=master)](http://travis-ci.org/bacrossland/ruby-enterprise-install)
+# ruby-enterprise-install [![Build Status](https://secure.travis-ci.org/bacrossland/ruby-enterprise-install.png?branch=master)](http://travis-ci.org/bacrossland/ruby-enterprise-install)
 
 Description
 ===========
 
 Installs Ruby Enterprise Edition (REE) by Phusion with patches from the github repo http://github.com/bacrossland/ruby_enterprise
 REE is no longer supported. You should migrate off it as soon as you can. This cookbook is here to help you do that by
-installing REE onto newer OS versions of Ubuntu, CentOS, and Fedora.
+installing REE onto newer OS versions of Ubuntu, CentOS, and Fedora. It's based off the no longer maintained
+cookbook ruby_enterprise (https://github.com/miketheman/ruby_enterprise).
 
 Requirements
 ============
@@ -50,7 +51,7 @@ This cookbook serves as a way to install REE onto new versions of infrastructure
 License and Authors
 ===================
 
-Bryan Crossland ([bacrossland](https://github.com/bacrossland))
+Author:: Bryan Crossland ([bacrossland](https://github.com/bacrossland))
 Author:: Mike Fiedler (<miketheman@gmail.com>)
 Author:: Joshua Timberman (<joshua@opscode.com>)
 Author:: Sean Cribbs (<seancribbs@gmail.com>)
