@@ -14,7 +14,6 @@ gemfile:
   - test/support/Gemfile
   - test/support/Gemfile.ruby-1.9.x
 script:
-  - bundle exec rake knife
   - bundle exec rake tailor
   - bundle exec rake foodcritic
 matrix:
