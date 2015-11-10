@@ -25,9 +25,9 @@ Attributes
 
 Usage
 =====
-Include the ruby_enterprise recipe to install REE.
+Include the ruby-enterprise-install recipe to install REE.
 
-    include_recipe "ruby_enterprise"
+    include_recipe "ruby-enterprise-install"
 
 Or add it to your role, or directly to a node's recipes.
 

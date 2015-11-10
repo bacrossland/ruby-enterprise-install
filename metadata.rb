@@ -6,7 +6,7 @@ source_url       'https://github.com/bacrossland/ruby-enterprise-install'
 issues_url       'https://github.com/bacrossland/ruby-enterprise-install/issues'
 description      'Installs/Configures ruby-enterprise'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.7'
+version          '0.2.8'
 
 recipe 'ruby-enterprise-install', 'Installs Ruby Enterprise Edition'
 

@@ -75,6 +75,7 @@ end
 bash 'Install Ruby Enterprise Edition' do
   cwd Chef::Config[:file_cache_path]
   code <<-EOH
+  export CFLAGS="-O2 -fno-tree-dce -fno-optimize-sibling-calls" && \
   ruby-enterprise-#{ree_ver}/installer \
     --auto=#{ree_path}
   EOH
